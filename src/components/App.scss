@@ -1,0 +1,15 @@
+button {
+    background: purple;
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #fff;
+    transition: all .25s ease;
+
+    &:hover {
+        background-color: #fff;
+        border-color: purple;
+    }
+}
