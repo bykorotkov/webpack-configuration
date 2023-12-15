@@ -1,4 +1,4 @@
-button {
+.button {
     background: purple;
     padding: 10px;
     border-radius: 20px;
@@ -12,4 +12,8 @@ button {
         background-color: #fff;
         border-color: purple;
     }
+}
+
+.value {
+    font-size: 100px;
 }
