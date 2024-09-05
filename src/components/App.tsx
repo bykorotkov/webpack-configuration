@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
 import classes from './App.module.scss'
 import {Link, Outlet} from "react-router-dom";
-import About from "@/pages/about/About";
 import imagePng from '@/assets/bannerCareerTablet1.png'
 import imageJpg from '@/assets/TourBgImage.jpg'
 import ImageSvg from '@/assets/closeIcon.svg'
+import '../styles/index.scss'
 
 function TODO() {
     TODO2()
 }
 
 function TODO2() {
-    throw new Error();
+    // throw new Error();
 }
 
 export const App = () => {
     const [count, setCount] = useState<number>(0)
 
     const increment = () => {
-        // setCount(prev => prev + 1 )
+        setCount(prev => prev + 1 )
         TODO()
     }
     // TODO(213123)
@@ -35,7 +35,7 @@ export const App = () => {
     // }
 
     return (
-        <div data-testid={'App.DataTestId'}>
+        <div data-testid={'App.DataTestId'} className='App Light'>
             <h1 data-testid={'Platform'}>PLATFORM={__PLATFORM__}</h1>
             <div>
                 <img width={300} height={300} src={imagePng} alt={''} />
@@ -49,7 +49,7 @@ export const App = () => {
             <Link to={'/shop'}>shop</Link>
             <h1 className={classes.value}>{count}</h1>
             <button className={classes.button} onClick={increment}>increment</button>
-            <About />
+            <Outlet />
         </div>
     );
 };

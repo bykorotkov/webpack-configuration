@@ -11,7 +11,8 @@ export function buildLoaders(options: BuildOptions):ModuleOptions['rules'] {
             loader: "css-loader",
             options: {
                 modules: {
-                    localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                    auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                    localIdentName: isDev ? '[path][name]_[local]__[hash:base64:5]' : '[hash:base64:8]'
                 }
             },
     }

@@ -2,8 +2,8 @@ import {createRoot} from "react-dom/client";
 import {App} from "@/components/App";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {LazyAbout} from "@/pages/about/About.lazy";
-import {Shop} from "@/pages/shop";
 import {Suspense} from "react";
+import { LazyShop } from "@/pages/shop/Shop.lazy"
 
 const root = document.getElementById('root')
 
@@ -16,7 +16,7 @@ const container = createRoot(root)
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <App  />,
         children: [
             {
                 path: '/about',
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/shop',
-                element: <Suspense fallback={'Loading...'}><Shop /></Suspense>
+                element: <Suspense fallback={'Loading...'}><LazyShop /></Suspense>
             },
         ]
     },
