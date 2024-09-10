@@ -4,6 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {LazyAbout} from "@/pages/about/About.lazy";
 import {Suspense} from "react";
 import { LazyShop } from "@/pages/shop/Shop.lazy"
+import ThemeProvider from "@/theme/ThemeProvider"
 
 const root = document.getElementById('root')
 
@@ -30,4 +31,11 @@ const router = createBrowserRouter([
     },
 ]);
 
-container.render(<RouterProvider router={router} />)
+// container.render(<RouterProvider router={router} />)
+
+
+container.render(
+    <ThemeProvider>
+        <RouterProvider router={router} />
+    </ThemeProvider>
+);
