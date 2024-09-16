@@ -3,9 +3,9 @@ import { Link, Outlet } from "react-router-dom"
 import imagePng from "@/assets/bannerCareerTablet1.png"
 import imageJpg from "@/assets/TourBgImage.jpg"
 import ImageSvg from "@/assets/closeIcon.svg"
-import "../styles/index.scss"
-import { useTheme } from "@/theme/useTheme"
-import { classNames } from "@/helpers/classNames/classNames"
+import "@/app/styles/index.scss"
+import { useTheme } from "@/app/providers/ThemeProvider/lib/useTheme"
+import { classNames } from "@/shared/lib/classNames/classNames"
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme()
@@ -13,7 +13,6 @@ export const App = () => {
     return (
         <div
             data-testid={"App.DataTestId"}
-            // className={`App ${theme}`}
             className={classNames('App', {}, [theme])}
         >
             <h1 data-testid={"Platform"}>PLATFORM={__PLATFORM__}</h1>

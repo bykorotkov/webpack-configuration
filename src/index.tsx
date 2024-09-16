@@ -1,41 +1,29 @@
 import {createRoot} from "react-dom/client";
-import {App} from "@/components/App";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {LazyAbout} from "@/pages/about/About.lazy";
-import {Suspense} from "react";
-import { LazyShop } from "@/pages/shop/Shop.lazy"
-import ThemeProvider from "@/theme/ThemeProvider"
+import { BrowserRouter, RouterProvider } from "react-router-dom"
+import ThemeProvider from "@/app/providers/ThemeProvider/ui/ThemeProvider"
+import { AppRouter } from "@/app/providers/Router"
+import { render } from "react-dom"
+import { App } from "@/app/App"
 
-const root = document.getElementById('root')
+// const root = document.getElementById('root')
+//
+// if (!root) {
+//     throw new Error('root is not found')
+// }
+//
+// const container = createRoot(root)
+//
+// container.render(
+//     <ThemeProvider>
+//         <RouterProvider router={AppRouter} />
+//     </ThemeProvider>
+// );
 
-if (!root) {
-    throw new Error('root is not found')
-}
-
-const container = createRoot(root)
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App  />,
-        children: [
-            {
-                path: '/about',
-                element: <Suspense fallback={'Loading...'}><LazyAbout /></Suspense>
-            },
-            {
-                path: '/shop',
-                element: <Suspense fallback={'Loading...'}><LazyShop /></Suspense>
-            },
-        ]
-    },
-]);
-
-// container.render(<RouterProvider router={router} />)
-
-
-container.render(
-    <ThemeProvider>
-        <RouterProvider router={router} />
-    </ThemeProvider>
-);
+render(
+    <BrowserRouter>
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    </BrowserRouter>,
+    document.getElementById('root')
+)
