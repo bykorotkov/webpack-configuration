@@ -1,0 +1,39 @@
+.ThemeSwitcher {
+  width: 40px;
+  height: 40px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    background: #dbb27f;
+    border-radius: 17px;
+    box-shadow: 4px 4px 11.4px 0 rgba(0, 0, 0, .1215686275);
+    width: 32px;
+    height: 9px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    background: #fff;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+    transition: var(--trans-primary);
+  }
+
+  &.Dark {
+    &::after {
+      left: 0;
+    }
+
+    &::before {
+      background: #ccc;
+    }
+  }
+}

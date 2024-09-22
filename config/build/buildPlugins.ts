@@ -16,14 +16,17 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions):Co
         new HtmlWebpackPlugin({ template: paths.html, favicon: path.resolve(paths.public, 'favicon.ico') }),
         new DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
-            __ENV__: JSON.stringify(mode)
-        })
+            __ENV__: JSON.stringify(mode),
+            __IS_DEV__: JSON.stringify(isDev)
+        }),
+        new webpack.HotModuleReplacementPlugin
     ]
 
     if(isDev) {
         plugins.push(new webpack.ProgressPlugin())
         plugins.push(new ForkTsCheckerWebpackPlugin())
         plugins.push(new ReactRefreshWebpackPlugin())
+        plugins.push(new webpack.HotModuleReplacementPlugin())
     }
 
     if(isProd) {

@@ -1,0 +1,21 @@
+.AppLink {
+  color: var(--primary-color);
+  padding: 20px;
+  display: inline-block;
+  text-decoration: none;
+  transition: all .25s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--secondary-bg-color-hover);
+    }
+  }
+}
+
+.Primary {
+  color: var(--primary-color);
+}
+
+.Secondary {
+  color: var(--secondary-color);
+}

@@ -1,0 +1,37 @@
+.Sidebar {
+  height: calc(100dvh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--secondary-bg-color);
+  position: relative;
+  transition: var(--trans-primary);
+}
+
+.TopBar {
+  width: 100%;
+  padding: 10px;
+
+  .TopBarButton {
+    text-align: center;
+    width: 100%;
+    max-width: 60px;
+  }
+}
+
+.Collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .Switchers {
+    flex-direction: column;
+  }
+}
+
+.Switchers {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

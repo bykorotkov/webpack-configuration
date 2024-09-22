@@ -1,7 +1,7 @@
 import { RouteProps } from "react-router-dom"
 import About from "@/pages/about/ui/About"
 import { Shop } from "@/pages/shop"
-import { App } from "@/app/App"
+import { Main } from "@/pages/main"
 
 export enum AppRoutes {
     MAIN = 'Main',
@@ -26,6 +26,6 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     },
     [AppRoutes.MAIN]: {
         path: RoutePath.Main,
-        element: <App />
+        element: <Main />
     }
 }

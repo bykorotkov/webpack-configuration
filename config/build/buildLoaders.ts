@@ -18,7 +18,7 @@ export function buildLoaders(options: BuildOptions):ModuleOptions['rules'] {
     }
 
     const assetLoader =  {
-            test: /\.(png|jpg|jpeg|gif)$/i,
+            test: /\.(png|jpg|jpeg|gif|woff2|woff)$/i,
             type: 'asset/resource',
     }
 

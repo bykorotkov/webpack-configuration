@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTranslation } from "react-i18next"
 
 const Shop = () => {
+    const {t} = useTranslation('shop')
+
     return (
         <h1>
-            Shop
+            {t('Магазин')}
         </h1>
     );
 };
